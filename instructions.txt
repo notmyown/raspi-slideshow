@@ -1,0 +1,24 @@
+Install
+======================
+sudo apt-get install feh
+sudo apt-get install xscreensaver
+sudo apt-get install rclone
+sudo apt-get install python-rpi.gpio python3-rpi.gpio
+sudo apt-get install git
+======================
+
+Git Einrichten:
+======================
+git config --global user.name "usr-name"
+git config --global user.email "e@mail.com"
+
+git config --global core.editor nano
+
+cd ~
+git clone https://github.com/notmyown/raspi-slideshow.git
+======================
+
+
+
+
+

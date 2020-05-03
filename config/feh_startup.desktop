@@ -1,0 +1,3 @@
+[Desktop Entry]
+Name=feh_slideshow
+Exec=~/raspi-slideshow/config/startup.sh
