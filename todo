@@ -1,0 +1,46 @@
+sudo apt-get install feh
+sudo apt-get install xscreensaver
+sudo apt-get install xdotool
+sudo apt-get install rclone
+sudo apt-get install python-rpi.gpio python3-rpi.gpio
+
+Autostart:
+sudo mkdir ~/.config/autostart
+sudo nano ~/.config/autostart/start_feh.desktop
+
+[Desktop Entry]
+Name=feh_slideshow
+Exec=/usr/local/Slideshow/config/startup.sh
+
+sudo nano /usr/local/Slideshow/config/startup.sh
+
+#!/bin/bash
+feh -Y -x -q -D 5 -B black -F -Z -z -R 1 -r /usr/local/Slideshow/images
+exit 0
+
+sudo chmo 755 /usr/local/Slideshow/config/startup.sh
+
+
+starten
+feh -Y -x -q -D 5 -B black -F -Z -z -R 1 -r /usr/local/Slideshow/images
+
+Steuern:
+	Pause:
+	xdotool search --name feh windowactive --sync %1 key h windowactive $(xdootool getwindowactive)
+
+	Next:
+	xdotool search --name feh windowactive --sync %1 key Right windowactive $(xdootool getwindowactive)
+
+	Prev:
+	xdotool search --name feh windowactive --sync %1 key Left windowactive $(xdootool getwindowactive)
+
+
+
+Console von aussen aktivieren:
+export DISPLAY=:0
+xdotool mousemove 100 100
+xdotool click 1
+
+
+
+
