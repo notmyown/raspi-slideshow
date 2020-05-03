@@ -1,7 +1,7 @@
 #!/bin/bash
-BASEDIR=$(dirname "$0")
+BASEDIR="$(dirname $(readlink -f $0))"
 
-./sync.sh
+${BASEDIR}/sync.sh
 feh --hide-pointer --borderless --quit --slideshow-delay 10 --image-bg black --fullscreen --auto-zoom --reload 1 --recursive -Sfilename ${BASEDIR}/../images
 
 exit 0

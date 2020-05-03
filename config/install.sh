@@ -1,6 +1,7 @@
 #!/bin/bash
-BASEDIR=$(dirname "$0")
+BASEDIR="$(dirname $(readlink -f $0))"
 
-sudo mkdir -p ~/.config/autostart
-cp ${BASEDIR}/feh_startup.desktop ~/.config/autostart
-cp ${BASEDIR}/gpio_startup.desktop ~/.config/autostart
+sudo mkdir -p /home/pi/.config/autostart
+
+cp -fR ${BASEDIR}/feh_startup.desktop /home/pi/.config/autostart/
+cp -fR ${BASEDIR}/gpio_startup.desktop /home/pi/.config/autostart/
